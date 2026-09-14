@@ -130,8 +130,9 @@ export const project = {
       note: "Arbeitsstand v0.9: finale Sponsorennennung, Logos und Pflichttexte vor Go-live mit Medical/Compliance abstimmen."
     },
     imageCredits: [
-      "Arbeitsgrafiken / Visualisierung: Vidal MMI Germany GmbH – redaktioneller Konzeptstand.",
-      "Vor Veröffentlichung finale Bild- und Grafiknachweise ergänzen."
+      "Kapitel 01 und 02: KI-generierte Hintergrundmotive für dieses Projekt; intern erstellt und kostenfrei innerhalb der Anwendung nutzbar.",
+      "Arbeitsgrafiken / Visualisierung Kapitel 02–12: Vidal MMI Germany GmbH – redaktioneller Konzeptstand.",
+      "Vor Veröffentlichung finale Bild- und Grafiknachweise sowie ggf. interne Freigabehinweise ergänzen."
     ]
   },
 
@@ -143,8 +144,8 @@ export const project = {
       kicker: "Pädiatrie · Impfprävention",
       title: "Pneumokokken-Impfung bei Kindern",
       subtitle: "Vom Serotyp zur individuellen Impfentscheidung",
-      background: "/assets/backgrounds/01_hero_pneumokokken-bg.jpg",
-      focal: "center center",
+      background: "/assets/backgrounds/01_hero_kind-impfung-bg.jpg",
+      focal: "right center",
       tone: "dark",
       align: "left",
       kind: "hero",
@@ -158,10 +159,10 @@ export const project = {
       kicker: "Kernaussagen in 60 Sekunden",
       title: "Pneumokokken bleiben klinisch relevant",
       subtitle: "Schwere Verläufe sind selten, aber für jüngere und vorerkrankte Kinder besonders relevant – zugleich bestehen weiterhin Impflücken.",
-      background: "/assets/backgrounds/02_keyfacts_ipd-bg.jpg",
+      background: "/assets/backgrounds/02_keyfacts_pneumokokken-bg.jpg",
       inlineImage: "/assets/images/02_keyfacts_ipd.png",
       inlineImageAlt: "Arbeitsgrafik mit Key Facts zu invasiven Pneumokokken-Erkrankungen bei Kindern und Jugendlichen",
-      focal: "center center",
+      focal: "right center",
       tone: "light",
       align: "left",
       kind: "stats",

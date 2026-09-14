@@ -2,8 +2,8 @@
 
 | Scroll-Kapitel | Kind / Tonalität | Ausrichtung | Asset |
 |---|---|---|---|
-| 01 Einstieg | hero / dark | left | `01_hero_pneumokokken.png` |
-| 02 Kernaussagen | stats / light | left | `02_keyfacts_ipd.png` |
+| 01 Einstieg | hero / dark | left | `01_hero_kind-impfung-bg.jpg` (Hintergrund, gespiegelt) |
+| 02 Kernaussagen | stats / light | left | `02_keyfacts_pneumokokken-bg.jpg` (Hintergrund) + `02_keyfacts_ipd.png` (Inline-Grafik) |
 | 03 Pneumokokken verstehen | standard / dark | right | `03_reservoir_transmission.png` |
 | 04 Serotypen im Wandel | standard / light | left | `04_serotypen_im_wandel.png` |
 | 05 Valenz & Evidenz | standard / dark | right | `05_valenz_evidenz.png` |
