@@ -1,0 +1,53 @@
+# Projektstatus – pneumokokken-update-kinder
+
+## v0.9 – 14.09.2026
+
+- Basis bewusst **v0.7**; die zwischenzeitliche v0.8 wird wegen nicht gewünschter Layout-/Farbänderungen nicht fortgeführt.
+- Keine grundlegenden CSS-, Layout- oder Farbänderungen gegenüber v0.7.
+- Pfizer-Daten vom 11.09.2026 redaktionell geprüft und in `docs/CONTENT-CLEARANCE-PFIZER-v0.9.md` dokumentiert.
+- Standardimpfung (PCV13/PCV15) und Indikationsimpfung (PCV20, Risikokinder 2–17 Jahre) in der Dramaturgie klarer getrennt.
+- Aktuelle deutsche Impfquoten/Versorgungslücken ergänzt.
+- Referenzlabor-Daten 2025/26 als **theoretische Serotypenabdeckung** eingeordnet; explizite Abgrenzung zur klinischen Wirksamkeit ergänzt.
+- PCV20-Indikationskapitel um STIKO-Begründung ergänzt.
+- Direkte PCV20-vs.-PCV15-Überlegenheitsvergleiche, PCV15-kritische Erwachsenendaten, hypothetische PCV20-Standardimpfungs-Szenarien, Adult-Daten und PCV25 bewusst nicht übernommen.
+- Sponsortransparenz im Impressum als Arbeitsstand ergänzt.
+- Offener Punkt: Rechte-/Nutzungsfreigabe der Referenzlabor-Daten bzw. Visuals vor Go-live.
+
+## In dieser v0.1 umgesetzt
+
+- Mastertemplate v2 als technische Basis übernommen.
+- Projektstammdaten auf Pneumokokken-Impfung bei Kindern umgestellt.
+- Content aus dem abgestimmten Word-Arbeitspapier in `src/project.js` übertragen.
+- 12 fachliche Story-Bausteine plus Quellen, Impressum und finaler CME-CTA angelegt.
+- Alle 12 Arbeitsgrafiken eingebunden.
+- v2-Grafik-Lightbox auf die eingebetteten Fachgrafiken erweitert.
+- Abgeleitete, unscharfe Vollbildhintergründe für eine ruhigere Scrollytelling-Optik erstellt.
+- Neuer wiederverwendbarer `cta`-Content-Typ für den CME-Abschluss ergänzt.
+- PDF-Engine auf Inline-Fachgrafiken und CTA-Kapitel erweitert.
+- Tracking-Fallback von `__MALARIA_TRACKING__` auf `__MEDI_SCROLL_TRACKING__` umbenannt.
+
+## Bewusst noch nicht finalisiert
+
+- Finaler CME-Link: derzeit allgemeiner Gelbe-Liste Campus als Arbeitsziel.
+- CME-Punkte: weiterhin nur geplant / vorbehaltlich Zertifizierung.
+- Referentennamen im CME-CTA: noch nicht ausgespielt.
+- Interaktiver Praxisnavigator: aktuell als Steps-Komponente + Arbeitsgrafik umgesetzt; echter Entscheidungs-Wizard erst nach Medical Validation.
+- Finale Fotowelt / lizenzierte Bildwelt: derzeit ausschließlich Arbeitsgrafiken.
+- Piano SDK / produktive Site-Konfiguration: weiterhin offen gemäß Tracking-Abstimmung.
+- Medical Review und Sponsor-/Compliance-Review: vor Go-live erforderlich.
+
+## Nächster sinnvoller Arbeitsschritt
+
+Nach inhaltlicher Freigabe der v0.1: visuelles Feintuning in Browser/Mobile, ggf. echter interaktiver Impfnavigator und Austausch des CME-Arbeitslinks gegen die finale Modul-URL.
+
+## Technische Prüfung in dieser Arbeitsumgebung
+
+- `src/project.js`, PDF-Engine, Tracking-Adapter und Vite-Konfiguration wurden per Node-Syntaxcheck geprüft.
+- Alle in `project.js` referenzierten lokalen Assets sind vorhanden.
+- Ein vollständiger `npm install` / Vite-Build konnte in der Arbeitsumgebung nicht abgeschlossen werden, weil der Zugriff auf das npm-Registry beim Installieren der Dependencies in das Timeout lief. Es lag dabei kein gemeldeter Build- oder Quellcodefehler vor. Vor GitHub/Vercel-Übergabe daher einmal lokal bzw. in Vercel `npm install` + `npm run build` ausführen.
+
+## v0.2 – Responsive Headlines
+- Deutsche automatische Silbentrennung (`hyphens: auto`) für Headlines und Untertitel ergänzt.
+- Sicheres Umbruchverhalten (`overflow-wrap: break-word`) für lange medizinische Begriffe wie „Pneumokokken“.
+- Mobile Headline-Größen unter 640 px leicht reduziert und `max-width: 100%` gesetzt, damit Überschriften nicht aus dem Viewport laufen.
+- Desktop-Typografie des v2-Templates bleibt unverändert.
