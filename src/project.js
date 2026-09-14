@@ -9,6 +9,8 @@
  *        Praxisfälle auf Versorgungssituationen umgestellt.
  * v0.11: Interaktive Kapitelergänzungen: Praxis-FAQ als aufklappbare Antworten, Praxis-Workflow als swipebare
  *        Einzelslides, Praxis-Fälle mit ausklappbaren Antworten, klickbare Literaturhinweise sowie aktualisiertes Impressum.
+ * v0.12: PDF-Export korrigiert: Unicode-kompatible PDF-Ausgabe, erhaltene Zeilenumbrüche, Accordion-Inhalte,
+ *        sauberere Seitenumbrüche, klickbare Quellen und aktualisierte Impressumsdaten im PDF.
  *
  * WICHTIG VOR GO-LIVE:
  * - medizinische Angaben / STIKO-Empfehlungen nochmals gegen aktuelle Primärquellen prüfen
@@ -30,7 +32,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.11",
+    contentVersion: "v0.12",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
@@ -132,7 +134,7 @@ export const project = {
     sponsoring: {
       heading: "Sponsoring & redaktionelle Unabhängigkeit",
       text: "Dieses Informationsangebot wird von MSD und Pfizer unterstützt. Auswahl, Bewertung, Gewichtung und redaktionelle Darstellung der Inhalte liegen bei Vidal MMI Germany GmbH.",
-      note: "Arbeitsstand v0.11: finale Sponsorennennung, Logos und Pflichttexte vor Go-live mit Medical/Compliance abstimmen."
+      note: "Arbeitsstand v0.12: finale Sponsorennennung, Logos und Pflichttexte vor Go-live mit Medical/Compliance abstimmen."
     },
     imageCredits: [
       "Die in diesem Informationsangebot verwendeten Hintergrundmotive wurden teilweise KI-gestützt für dieses Projekt erstellt.",
@@ -233,7 +235,7 @@ export const project = {
         "Diese Prozentwerte beschreiben ausschließlich, welcher Anteil der nachgewiesenen Serotypen in den jeweiligen Impfstoffen enthalten ist. Sie sind keine Aussage zur klinischen Impfstoffwirksamkeit und ersetzen nicht die alters- und indikationsspezifische STIKO-Empfehlung."
       ],
       quote: "Serotypenabdeckung ist eine epidemiologische Kenngröße – keine Rangliste der Impfstoffe.",
-      note: "Arbeitsstand v0.11: Für Referenzlabor-Daten bzw. daraus abgeleitete Visuals ist vor Veröffentlichung die erforderliche Nutzungsfreigabe zu klären."
+      note: "Arbeitsstand v0.12: Für Referenzlabor-Daten bzw. daraus abgeleitete Visuals ist vor Veröffentlichung die erforderliche Nutzungsfreigabe zu klären."
     },
     {
       id: "valenz-evidenz",
@@ -332,7 +334,7 @@ export const project = {
           answer: "Risikokinder aktiv identifizieren, Impfstatus dokumentieren, Reminder nutzen, Patient:innen einbestellen und Verantwortlichkeiten zwischen Pädiatrie und Facharztpraxis klar abstimmen."
         }
       ],
-      note: "Arbeitsstand v0.11: Die FAQ-Antworten werden vor Go-live nochmals gegen die aktuelle STIKO-Empfehlung und die jeweiligen Fachinformationen geprüft.",
+      note: "Arbeitsstand v0.12: Die FAQ-Antworten werden vor Go-live nochmals gegen die aktuelle STIKO-Empfehlung und die jeweiligen Fachinformationen geprüft.",
       quote: "Praxisrelevanz entsteht dort, wo aus einer Frage ein klarer nächster Handlungsschritt wird."
     },
     {

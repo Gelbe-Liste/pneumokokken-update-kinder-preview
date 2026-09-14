@@ -64,3 +64,7 @@ Nach inhaltlicher Freigabe der v0.1: visuelles Feintuning in Browser/Mobile, ggf
 - Sicheres Umbruchverhalten (`overflow-wrap: break-word`) für lange medizinische Begriffe wie „Pneumokokken“.
 - Mobile Headline-Größen unter 640 px leicht reduziert und `max-width: 100%` gesetzt, damit Überschriften nicht aus dem Viewport laufen.
 - Desktop-Typografie des v2-Templates bleibt unverändert.
+
+## v0.12 – PDF-Export / offener Analytics-Dokumentationspunkt
+- PDF-Export nach Prüfung des generierten v0.11-PDFs korrigiert (Unicode, Umbrüche, Accordion-Inhalte, Workflow-Paginierung, Literatur-Links, Impressum).
+- **Späterer To-do nach Abschluss der Konzeption:** saubere Piano-Analytics Event-/Property-Dokumentation für Alex/Emma erstellen. Noch nicht finalisieren, solange Kapitel-/Interaktionskonzept weiter bearbeitet wird.
