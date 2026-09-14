@@ -1664,9 +1664,14 @@ button.secondary-cta {
 }
 
 .accordion {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   border: 1px solid rgba(128, 128, 128, .24);
+  border-radius: var(--radius-card);
   background: rgba(255, 255, 255, .08);
   padding: 18px 18px 16px;
+  overflow: hidden;
 }
 
 .story-page--light .accordion {
@@ -1675,14 +1680,20 @@ button.secondary-cta {
 
 .accordion__heading {
   margin: 0 0 10px !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .accordion__teaser p {
   margin: 0 0 10px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .accordion__toggle {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1691,6 +1702,7 @@ button.secondary-cta {
   margin-top: 6px;
   padding: 12px 15px;
   border: 1px solid rgba(128, 128, 128, .28);
+  border-radius: var(--radius-control);
   background: var(--yellow);
   color: #111;
   font-weight: 900;
@@ -1717,12 +1729,17 @@ button.secondary-cta {
 
 .accordion__body p {
   margin: 0 0 12px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 /* =========================================================
    v0.11 – Praxis-Workflow slider / swipe cards
    ========================================================= */
 .workflow-carousel {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin-top: 28px;
 }
 
@@ -1735,8 +1752,12 @@ button.secondary-cta {
 }
 
 .workflow-carousel__viewport {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   border: 1px solid rgba(128, 128, 128, .22);
+  border-radius: var(--radius-card);
   background: rgba(255,255,255,.08);
   touch-action: pan-y;
 }
@@ -1747,14 +1768,29 @@ button.secondary-cta {
 
 .workflow-carousel__track {
   display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   transition: transform .24s ease;
   will-change: transform;
 }
 
 .workflow-slide {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   flex: 0 0 100%;
   padding: 22px 22px 18px;
+}
+
+.workflow-slide > * {
+  max-width: 100%;
+}
+
+.workflow-slide h3,
+.workflow-slide p,
+.workflow-slide li {
+  overflow-wrap: anywhere;
 }
 
 .workflow-slide__meta {
@@ -1782,6 +1818,9 @@ button.secondary-cta {
 }
 
 .workflow-carousel__controls {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   display: grid;
   grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
   gap: 10px;
@@ -1796,9 +1835,13 @@ button.secondary-cta {
 }
 
 .workflow-carousel__button {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 48px;
   padding: 12px 15px;
   border: 1px solid rgba(128, 128, 128, .28);
+  border-radius: var(--radius-control);
   background: transparent;
   color: inherit;
   font-weight: 900;
@@ -1843,15 +1886,50 @@ button.secondary-cta {
 
 @media (max-width: 640px) {
   .accordion {
+    border-radius: 16px;
     padding: 16px 15px 14px;
+  }
+
+  .accordion__toggle {
+    padding: 11px 13px;
+    border-radius: 12px;
+    font-size: .95rem;
+  }
+
+  .workflow-carousel__hint {
+    font-size: .8rem;
+  }
+
+  .workflow-carousel__viewport {
+    border-radius: 16px;
   }
 
   .workflow-slide {
     padding: 18px 16px 14px;
   }
 
+  .workflow-slide__meta {
+    font-size: .75rem;
+  }
+
+  .workflow-slide__number {
+    width: 42px;
+    height: 42px;
+    font-size: 1.05rem;
+  }
+
+  .workflow-slide h3 {
+    font-size: 1.12rem;
+    line-height: 1.2;
+  }
+
   .workflow-carousel__controls {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .workflow-carousel__button {
+    padding: 11px 12px;
+    font-size: .92rem;
   }
 
   .workflow-carousel__status {
