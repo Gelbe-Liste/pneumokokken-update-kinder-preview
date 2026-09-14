@@ -11,6 +11,7 @@
  *        Einzelslides, Praxis-Fälle mit ausklappbaren Antworten, klickbare Literaturhinweise sowie aktualisiertes Impressum.
  * v0.12: PDF-Export korrigiert: Unicode-kompatible PDF-Ausgabe, erhaltene Zeilenumbrüche, Accordion-Inhalte,
  * v0.13: Mobile-Optimierung für Kapitel Praxis-Workflow sowie abgerundete Ecken für Swipe- und Aufklapp-Module.
+ * v0.14: Mobile-Fix Praxis-Workflow: harte Breitenbegrenzung für Card, Inline-Grafik und Swipe-Komponenten gegen intrinsischen Horizontal-Overflow.
  *        sauberere Seitenumbrüche, klickbare Quellen und aktualisierte Impressumsdaten im PDF.
  *
  * WICHTIG VOR GO-LIVE:

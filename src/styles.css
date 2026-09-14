@@ -1971,3 +1971,81 @@ button.secondary-cta {
     break-inside: avoid;
   }
 }
+
+/* =========================================================
+   v0.14 – Praxis-Workflow: hard mobile width containment
+   Fixes intrinsic-width expansion caused by the 1600px inline
+   workflow graphic/button inside the flex-based chapter layout.
+   ========================================================= */
+#praxisnavigator .story-page__inner,
+#praxisnavigator .content-card,
+#praxisnavigator .inline-graphic-block,
+#praxisnavigator .inline-graphic-trigger,
+#praxisnavigator .workflow-carousel,
+#praxisnavigator .workflow-carousel__viewport,
+#praxisnavigator .workflow-carousel__track,
+#praxisnavigator .workflow-slide {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#praxisnavigator .content-card {
+  overflow: hidden;
+}
+
+#praxisnavigator .inline-graphic-block,
+#praxisnavigator .inline-graphic-trigger {
+  width: 100%;
+}
+
+#praxisnavigator .inline-graphic-trigger .inline-figure,
+#praxisnavigator .inline-figure--chapter {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  #praxisnavigator .story-page__inner {
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    min-width: 0;
+  }
+
+  #praxisnavigator .content-card,
+  #praxisnavigator .content-card--wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #praxisnavigator .content-card > *,
+  #praxisnavigator h2,
+  #praxisnavigator .page-subtitle {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #praxisnavigator h2 {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #praxisnavigator .inline-graphic-block {
+    overflow: hidden;
+  }
+
+  #praxisnavigator .inline-graphic-trigger {
+    overflow: hidden;
+    min-inline-size: 0;
+  }
+
+  #praxisnavigator .inline-graphic-trigger .inline-figure,
+  #praxisnavigator .inline-figure--chapter {
+    aspect-ratio: auto !important;
+    max-height: none !important;
+  }
+}
