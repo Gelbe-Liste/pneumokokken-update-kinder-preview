@@ -85,7 +85,7 @@ export default function WorkflowCarousel({ page, pageName }) {
         </div>
       </div>
 
-      <div className="workflow-carousel__hint">Nach links swipen = vorwärts · nach rechts swipen = rückwärts</div>
+      <div className="workflow-carousel__hint">← Vorwärts wischen  |  Rückwärts wischen →</div>
 
       <div className="workflow-carousel__controls">
         <button
