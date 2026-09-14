@@ -1653,3 +1653,243 @@ button.secondary-cta {
   }
 }
 
+
+/* =========================================================
+   v0.11 – Praxis-FAQ / Praxis-Fälle accordions
+   ========================================================= */
+.accordion-group {
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+}
+
+.accordion {
+  border: 1px solid rgba(128, 128, 128, .24);
+  background: rgba(255, 255, 255, .08);
+  padding: 18px 18px 16px;
+}
+
+.story-page--light .accordion {
+  background: rgba(17, 17, 17, .035);
+}
+
+.accordion__heading {
+  margin: 0 0 10px !important;
+}
+
+.accordion__teaser p {
+  margin: 0 0 10px;
+}
+
+.accordion__toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 50px;
+  margin-top: 6px;
+  padding: 12px 15px;
+  border: 1px solid rgba(128, 128, 128, .28);
+  background: var(--yellow);
+  color: #111;
+  font-weight: 900;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion__icon {
+  flex: 0 0 auto;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.accordion__body {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(128, 128, 128, .24);
+}
+
+.accordion__body.is-open {
+  display: block;
+}
+
+.accordion__body p {
+  margin: 0 0 12px;
+}
+
+/* =========================================================
+   v0.11 – Praxis-Workflow slider / swipe cards
+   ========================================================= */
+.workflow-carousel {
+  margin-top: 28px;
+}
+
+.workflow-carousel__hint {
+  margin-bottom: 12px;
+  font-size: .84rem;
+  font-weight: 800;
+  line-height: 1.35;
+  opacity: .82;
+}
+
+.workflow-carousel__viewport {
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, .22);
+  background: rgba(255,255,255,.08);
+  touch-action: pan-y;
+}
+
+.story-page--light .workflow-carousel__viewport {
+  background: rgba(17,17,17,.035);
+}
+
+.workflow-carousel__track {
+  display: flex;
+  transition: transform .24s ease;
+  will-change: transform;
+}
+
+.workflow-slide {
+  width: 100%;
+  flex: 0 0 100%;
+  padding: 22px 22px 18px;
+}
+
+.workflow-slide__meta {
+  font-size: .82rem;
+  font-weight: 800;
+  opacity: .75;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.workflow-slide__number {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  margin-top: 14px;
+  background: var(--yellow);
+  color: #111;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.workflow-slide h3 {
+  margin: 16px 0 8px;
+}
+
+.workflow-carousel__controls {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.workflow-carousel__status {
+  min-width: 58px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.workflow-carousel__button {
+  min-height: 48px;
+  padding: 12px 15px;
+  border: 1px solid rgba(128, 128, 128, .28);
+  background: transparent;
+  color: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.workflow-carousel__button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.workflow-carousel__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.workflow-carousel__dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(128, 128, 128, .38);
+  cursor: pointer;
+}
+
+.workflow-carousel__dot.is-active {
+  background: var(--yellow);
+}
+
+.imprint-brand-heading {
+  margin: 0 0 6px;
+  font-size: .8rem !important;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
+@media (max-width: 640px) {
+  .accordion {
+    padding: 16px 15px 14px;
+  }
+
+  .workflow-slide {
+    padding: 18px 16px 14px;
+  }
+
+  .workflow-carousel__controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .workflow-carousel__status {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+}
+
+@media print {
+  .accordion__body {
+    display: block !important;
+    border-top: 0 !important;
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+  }
+
+  .accordion__toggle,
+  .workflow-carousel__hint,
+  .workflow-carousel__controls,
+  .workflow-carousel__dots {
+    display: none !important;
+  }
+
+  .workflow-carousel__viewport {
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .workflow-carousel__track {
+    display: block !important;
+    transform: none !important;
+  }
+
+  .workflow-slide {
+    width: 100% !important;
+    padding: 12px 0 !important;
+    border-top: 1px solid rgba(0,0,0,.12);
+    break-inside: avoid;
+  }
+}

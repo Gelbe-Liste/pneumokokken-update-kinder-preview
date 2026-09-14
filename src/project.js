@@ -7,6 +7,8 @@
  *        auf Basis der sponsorneutralen v0.9: Versorgungslücke stärker gewichtet, Praxis-FAQ erweitert,
  *        Risikokinder individualisiert eingeordnet, Praxisnavigator durch 7-Schritte-Workflow ersetzt,
  *        Praxisfälle auf Versorgungssituationen umgestellt.
+ * v0.11: Interaktive Kapitelergänzungen: Praxis-FAQ als aufklappbare Antworten, Praxis-Workflow als swipebare
+ *        Einzelslides, Praxis-Fälle mit ausklappbaren Antworten, klickbare Literaturhinweise sowie aktualisiertes Impressum.
  *
  * WICHTIG VOR GO-LIVE:
  * - medizinische Angaben / STIKO-Empfehlungen nochmals gegen aktuelle Primärquellen prüfen
@@ -28,7 +30,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.10",
+    contentVersion: "v0.11",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
@@ -81,15 +83,18 @@ export const project = {
     },
     {
       id: "VAC-1",
-      text: "Rieck T et al.: Impfquoten in Deutschland. Epidemiologisches Bulletin 50/2025. KV-Impfsurveillance zur Pneumokokken-Impfung im Kindesalter."
+      text: "Rieck T et al.: Impfquoten in Deutschland. Epidemiologisches Bulletin 50/2025. KV-Impfsurveillance zur Pneumokokken-Impfung im Kindesalter.",
+      url: "https://www.rki.de/DE/Themen/Infektionskrankheiten/Impfen/Impfquoten/KV-Impfsurveillance/kv-impfsurveillance-node.html"
     },
     {
       id: "VAC-2",
-      text: "Laurenz M et al.: Impact of the change in vaccination schedules for term infants on the completeness of vaccination series for preterm infants. ESPID 2026; ergänzende InGef-Routinedaten zu Vollständigkeit und Zeitgerechtigkeit der PCV-Impfung."
+      text: "Laurenz M et al.: Impact of the change in vaccination schedules for term infants on the completeness of vaccination series for preterm infants. ESPID 2026; ergänzende InGef-Routinedaten zu Vollständigkeit und Zeitgerechtigkeit der PCV-Impfung.",
+      url: "https://link.springer.com/article/10.1007/s40121-025-01173-8"
     },
     {
       id: "SURV-2",
-      text: "Itzek A, van der Linden M: Serotypendynamik invasiver Pneumokokken-Erkrankungen bei Kindern und Jugendlichen <18 Jahren in Deutschland, Saison 2025/26; Referenzlabor für Streptokokken / ISPPD 2026. Nutzung von Referenzlabor-Daten und Abbildungen vor Veröffentlichung freigeben lassen."
+      text: "Itzek A, van der Linden M: Serotypendynamik invasiver Pneumokokken-Erkrankungen bei Kindern und Jugendlichen <18 Jahren in Deutschland, Saison 2025/26; Referenzlabor für Streptokokken / ISPPD 2026. Nutzung von Referenzlabor-Daten und Abbildungen vor Veröffentlichung freigeben lassen.",
+      url: "https://www.ukaachen.de/kliniken-institute/institut-fuer-medizinische-mikrobiologie/forschung/nationales-referenzzentrum-fuer-streptokokken/"
     },
     {
       id: "EMA-1",
@@ -109,7 +114,9 @@ export const project = {
   ],
 
   imprint: {
+    brandHeading: "Gelbe Liste Online",
     editorialHeading: "Corporate Publishing",
+    editorialRoleLabel: "Konzeption, Redaktion und Umsetzung",
     editorialName: "Guido Strehlau",
     company: "Vidal MMI Germany GmbH",
     street: "Monzastraße 4",
@@ -117,6 +124,7 @@ export const project = {
     phone: "06103 2076-0",
     phoneHref: "+49610320760",
     email: "info@mmi.de",
+    editorialEmail: "RedaktionOnline@mmi.de",
     representatives: "Michael Schösser, Vincent Bouvier",
     register: "Amtsgericht Offenbach/Main, HRB 8014",
     vatId: "DE113524692",
@@ -124,7 +132,7 @@ export const project = {
     sponsoring: {
       heading: "Sponsoring & redaktionelle Unabhängigkeit",
       text: "Dieses Informationsangebot wird von MSD und Pfizer unterstützt. Auswahl, Bewertung, Gewichtung und redaktionelle Darstellung der Inhalte liegen bei Vidal MMI Germany GmbH.",
-      note: "Arbeitsstand v0.10: finale Sponsorennennung, Logos und Pflichttexte vor Go-live mit Medical/Compliance abstimmen."
+      note: "Arbeitsstand v0.11: finale Sponsorennennung, Logos und Pflichttexte vor Go-live mit Medical/Compliance abstimmen."
     },
     imageCredits: [
       "Die in diesem Informationsangebot verwendeten Hintergrundmotive wurden teilweise KI-gestützt für dieses Projekt erstellt.",
@@ -225,7 +233,7 @@ export const project = {
         "Diese Prozentwerte beschreiben ausschließlich, welcher Anteil der nachgewiesenen Serotypen in den jeweiligen Impfstoffen enthalten ist. Sie sind keine Aussage zur klinischen Impfstoffwirksamkeit und ersetzen nicht die alters- und indikationsspezifische STIKO-Empfehlung."
       ],
       quote: "Serotypenabdeckung ist eine epidemiologische Kenngröße – keine Rangliste der Impfstoffe.",
-      note: "Arbeitsstand v0.10: Für Referenzlabor-Daten bzw. daraus abgeleitete Visuals ist vor Veröffentlichung die erforderliche Nutzungsfreigabe zu klären."
+      note: "Arbeitsstand v0.11: Für Referenzlabor-Daten bzw. daraus abgeleitete Visuals ist vor Veröffentlichung die erforderliche Nutzungsfreigabe zu klären."
     },
     {
       id: "valenz-evidenz",
@@ -291,33 +299,40 @@ export const project = {
       kind: "standard",
       long: true,
       zoomable: true,
-      blocks: [
+      accordionVariant: "faq",
+      accordionItems: [
         {
+          id: "faq-1",
           heading: "1 · Mit PCV13 begonnen – kann mit PCV15 weitergeimpft werden?",
-          text: "Ja. Nach der STIKO-Stellungnahme kann eine mit PCV10 oder PCV13 begonnene Säuglings-Impfserie mit PCV15 vervollständigt werden, ohne zusätzliche Dosen über das altersentsprechende Schema hinaus."
+          answer: "Ja. Nach der STIKO-Stellungnahme kann eine mit PCV10 oder PCV13 begonnene Säuglings-Impfserie mit PCV15 vervollständigt werden, ohne zusätzliche Dosen über das altersentsprechende Schema hinaus."
         },
         {
+          id: "faq-2",
           heading: "2 · Was tun, wenn die Grundimmunisierung nicht rechtzeitig abgeschlossen wurde?",
-          text: "Impfstatus aktiv prüfen und fehlende Dosen nach dem aktuellen altersentsprechenden STIKO-Schema nachholen. Die Impfserie wird nicht pauschal neu begonnen; entscheidend sind Alter, bisherige Dosen und der aktuelle Impfstatus."
+          answer: "Impfstatus aktiv prüfen und fehlende Dosen nach dem aktuellen altersentsprechenden STIKO-Schema nachholen. Die Impfserie wird nicht pauschal neu begonnen; entscheidend sind Alter, bisherige Dosen und der aktuelle Impfstatus."
         },
         {
+          id: "faq-3",
           heading: "3 · Was verändert sich ab dem Alter von zwei Jahren?",
-          text: "Bei Kindern und Jugendlichen von 2 bis 17 Jahren ist zunächst zu prüfen, ob ein definierter STIKO-Risikofaktor vorliegt. Für diese Risikogruppe empfiehlt die STIKO seit 2026 PCV20 als Indikationsimpfung."
+          answer: "Bei Kindern und Jugendlichen von 2 bis 17 Jahren ist zunächst zu prüfen, ob ein definierter STIKO-Risikofaktor vorliegt. Für diese Risikogruppe empfiehlt die STIKO seit 2026 PCV20 als Indikationsimpfung."
         },
         {
+          id: "faq-4",
           heading: "4 · Wie gehe ich bei unklarem Impfstatus oder unklaren Vorimpfungen vor?",
-          text: "Vorimpfungen sollten soweit möglich anhand vorhandener Impfdokumente geklärt werden. Die weitere Planung richtet sich nach Alter, Risikoprofil und verifizierter Vorimpfung; unklare Konstellationen erfordern eine individuelle ärztliche Prüfung."
+          answer: "Vorimpfungen sollten soweit möglich anhand vorhandener Impfdokumente geklärt werden. Die weitere Planung richtet sich nach Alter, Risikoprofil und verifizierter Vorimpfung; unklare Konstellationen erfordern eine individuelle ärztliche Prüfung."
         },
         {
+          id: "faq-5",
           heading: "5 · Wann verändern Grunderkrankung, Therapie oder Immunsuppression die Impfstrategie?",
-          text: "Nicht die Diagnose allein entscheidet. Relevant sind unter anderem Art und Schwere der Grunderkrankung, Therapie bzw. Immunsuppression, Alter und bisheriger Impfstatus sowie die aktuelle STIKO-Indikation."
+          answer: "Nicht die Diagnose allein entscheidet. Relevant sind unter anderem Art und Schwere der Grunderkrankung, Therapie bzw. Immunsuppression, Alter und bisheriger Impfstatus sowie die aktuelle STIKO-Indikation."
         },
         {
+          id: "faq-6",
           heading: "6 · Wie wird sichergestellt, dass notwendige Risikoimpfungen im Alltag umgesetzt werden?",
-          text: "Risikokinder aktiv identifizieren, Impfstatus dokumentieren, Reminder nutzen, Patient:innen einbestellen und Verantwortlichkeiten zwischen Pädiatrie und Facharztpraxis klar abstimmen."
+          answer: "Risikokinder aktiv identifizieren, Impfstatus dokumentieren, Reminder nutzen, Patient:innen einbestellen und Verantwortlichkeiten zwischen Pädiatrie und Facharztpraxis klar abstimmen."
         }
       ],
-      note: "Arbeitsstand v0.10: Die FAQ-Antworten werden vor Go-live nochmals gegen die aktuelle STIKO-Empfehlung und die jeweiligen Fachinformationen geprüft.",
+      note: "Arbeitsstand v0.11: Die FAQ-Antworten werden vor Go-live nochmals gegen die aktuelle STIKO-Empfehlung und die jeweiligen Fachinformationen geprüft.",
       quote: "Praxisrelevanz entsteht dort, wo aus einer Frage ein klarer nächster Handlungsschritt wird."
     },
     {
@@ -379,9 +394,9 @@ export const project = {
     {
       id: "praxisnavigator",
       number: "10",
-      nav: "Praxisworkflow",
-      kicker: "Praxisworkflow",
-      title: "Risikokinder erkennen – Impfversorgung aktiv steuern",
+      nav: "Praxis-Workflow",
+      kicker: "Praxis-Workflow",
+      title: "Praxis-Workflow: Risikokinder erkennen – Impfversorgung aktiv steuern",
       subtitle: "Sieben Schritte für eine verlässliche Versorgung im Praxisalltag.",
       background: "/assets/backgrounds/10_praxisnavigator-bg.jpg",
       focal: "right center",
@@ -407,8 +422,8 @@ export const project = {
     {
       id: "praxisfaelle",
       number: "11",
-      nav: "Praxisfälle",
-      kicker: "Praxisfälle",
+      nav: "Praxis-Fälle",
+      kicker: "Praxis-Fälle",
       title: "Vier Situationen, die die Empfehlung greifbar machen",
       subtitle: "Der Scroll endet mit der Frage – das CME liefert die vertiefte Diskussion.",
       background: "/assets/backgrounds/11_praxisfaelle-bg.jpg",
@@ -420,22 +435,43 @@ export const project = {
       kind: "standard",
       long: true,
       zoomable: true,
-      blocks: [
+      accordionVariant: "cases",
+      accordionItems: [
         {
+          id: "case-a",
           heading: "Fall A · Grundimmunisierung verspätet oder unvollständig",
-          text: "Ausgangssituation: Bei einem Säugling oder Kleinkind fehlen Impfungen bzw. Termine wurden verschoben. Frage: Welche Dosis fehlt, welches altersgerechte Nachholschema ist relevant und wie wird der nächste Termin verbindlich organisiert?"
+          teaser: [
+            "Ausgangssituation: Bei einem Säugling oder Kleinkind fehlen Impfungen beziehungsweise Termine wurden verschoben.",
+            "Frage: Welche Dosis fehlt, welches altersgerechte Nachholschema ist relevant und wie wird der nächste Termin verbindlich organisiert?"
+          ],
+          answer: "Antwort: Impfstatus prüfen, fehlende Dosen nach dem altersentsprechenden STIKO-Nachholschema ergänzen und die Impfserie nicht pauschal neu beginnen. Entscheidend sind Alter, dokumentierte Vorimpfungen und ein konkret vereinbarter nächster Impftermin."
         },
         {
+          id: "case-b",
           heading: "Fall B · Kind mit Asthma",
-          text: "Ausgangssituation: Ein Kind mit chronischer Atemwegserkrankung wird in der Praxis betreut. Frage: Liegt in der konkreten Situation eine STIKO-Risikokonstellation vor und ist der Pneumokokken-Impfstatus vollständig? Nächster Schritt: Erkrankung, Risiko und Impfstatus gemeinsam prüfen."
+          teaser: [
+            "Ausgangssituation: Ein Kind mit chronischer Atemwegserkrankung wird in der Praxis betreut.",
+            "Frage: Liegt in der konkreten Situation eine STIKO-Risikokonstellation vor und ist der Pneumokokken-Impfstatus vollständig?"
+          ],
+          answer: "Antwort: Nicht das Schlagwort Asthma allein entscheidet, sondern die konkrete klinische Situation. Erkrankung, Begleittherapie, möglicher Risikostatus und dokumentierter Impfstatus sollten gemeinsam bewertet werden; bei vorliegender STIKO-Indikation ist ab dem Alter von 2 Jahren die Indikationsimpfung mit PCV20 zu prüfen."
         },
         {
+          id: "case-c",
           heading: "Fall C · Kind mit Psoriasis",
-          text: "Ausgangssituation: Psoriasis mit möglicher systemischer bzw. immunsuppressiver Therapie. Frage: Welche Bedeutung haben Grunderkrankung, Therapie und daraus resultierende Immunsuppression für die Risikobewertung und die Impfplanung?"
+          teaser: [
+            "Ausgangssituation: Psoriasis mit möglicher systemischer beziehungsweise immunsuppressiver Therapie.",
+            "Frage: Welche Bedeutung haben Grunderkrankung, Therapie und daraus resultierende Immunsuppression für die Risikobewertung und die Impfplanung?"
+          ],
+          answer: "Antwort: Die Impfplanung orientiert sich an der individuellen Risikokonstellation. Relevant sind die Grunderkrankung selbst, eine mögliche systemische oder immunsuppressive Therapie, das Alter des Kindes und der dokumentierte Impfstatus; die weitere Planung sollte bei Bedarf interdisziplinär abgestimmt werden."
         },
         {
+          id: "case-d",
           heading: "Fall D · Kind mit Cochlea-Implantat",
-          text: "Ausgangssituation: Anatomische bzw. fremdkörperassoziierte Risikosituation. Frage: Welche Vorimpfungen sind dokumentiert und welche weiteren Schritte sind nach aktueller STIKO erforderlich? Die konkrete Auflösung wird im CME vertieft."
+          teaser: [
+            "Ausgangssituation: Anatomische beziehungsweise fremdkörperassoziierte Risikosituation.",
+            "Frage: Welche Vorimpfungen sind dokumentiert und welche weiteren Schritte sind nach aktueller STIKO erforderlich?"
+          ],
+          answer: "Antwort: Das Cochlea-Implantat gehört zu den anatomischen beziehungsweise fremdkörperassoziierten Risikokonstellationen für Pneumokokken-Meningitis. Deshalb sollten Vorimpfungen aktiv geprüft, fehlende Standardimpfungen ergänzt und – bei gegebener Alters- und Indikationslage – die empfohlene Indikationsimpfung umgesetzt werden."
         }
       ],
       quote: "Ausgangssituation, konkrete Frage und nächster Schritt – die Fälle übertragen die Empfehlung in typische Versorgungssituationen."
