@@ -1,5 +1,18 @@
 # Projektstatus – pneumokokken-update-kinder
 
+## v0.10 – 14.09.2026
+
+- Inhaltliche Änderungs-/Ergänzungswünsche aus `v0.7_Korr` gegen die sponsorneutral überarbeitete v0.9 umgesetzt.
+- Keine neuen grundlegenden Layout-, Farb- oder Look-&-Feel-Änderungen.
+- Versorgungslücke und zeitgerechter Impfschutz in Einstieg und Kernaussagen stärker priorisiert.
+- Praxis-FAQ auf sechs typische Versorgungssituationen erweitert.
+- Risikokinder um individuelle Faktoren, Immunsuppression, Asthma-Beispiel und Versorgungsschnittstellen ergänzt.
+- Praxisnavigator als Mini-Algorithmus entfernt und durch 7-stufigen Praxisworkflow ersetzt.
+- Praxisfälle auf unvollständige Grundimmunisierung, Asthma, Psoriasis und Cochlea-Implantat umgestellt.
+- Inhaltlich überholte Fachgrafiken in Kapitel 02, 03, 05, 06, 07, 08, 10 und 11 aktualisiert.
+- Nicht mehr verwendete Serotyp-38-/SURV-1-Quelle aus der sichtbaren Quellenliste entfernt.
+- Medical Review der FAQ-Details und der finalen Fallauflösungen bleibt vor Go-live erforderlich.
+
 ## v0.9 – 14.09.2026
 
 - Basis bewusst **v0.7**; die zwischenzeitliche v0.8 wird wegen nicht gewünschter Layout-/Farbänderungen nicht fortgeführt.
@@ -31,7 +44,7 @@
 - Finaler CME-Link: derzeit allgemeiner Gelbe-Liste Campus als Arbeitsziel.
 - CME-Punkte: weiterhin nur geplant / vorbehaltlich Zertifizierung.
 - Referentennamen im CME-CTA: noch nicht ausgespielt.
-- Interaktiver Praxisnavigator: aktuell als Steps-Komponente + Arbeitsgrafik umgesetzt; echter Entscheidungs-Wizard erst nach Medical Validation.
+- Praxisworkflow Risikokinder: aktuell als 7-stufige Steps-Komponente + Arbeitsgrafik umgesetzt; kein individualisierter Impfalgorithmus.
 - Finale Fotowelt / lizenzierte Bildwelt: derzeit ausschließlich Arbeitsgrafiken.
 - Piano SDK / produktive Site-Konfiguration: weiterhin offen gemäß Tracking-Abstimmung.
 - Medical Review und Sponsor-/Compliance-Review: vor Go-live erforderlich.
