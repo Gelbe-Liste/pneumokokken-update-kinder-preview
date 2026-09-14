@@ -52,16 +52,14 @@ export default function WorkflowCarousel({ page, pageName }) {
     const deltaX = endX - startX;
     if (Math.abs(deltaX) < 48) return;
 
-    if (deltaX > 0) changeSlide(1, "swipe_right_forward");
-    else changeSlide(-1, "swipe_left_backward");
+    if (deltaX < 0) changeSlide(1, "swipe_left_forward");
+    else changeSlide(-1, "swipe_right_backward");
   };
 
   if (!total) return null;
 
   return (
     <div className="workflow-carousel">
-      <div className="workflow-carousel__hint">Rechts swipen = vorwärts · links swipen = rückwärts</div>
-
       <div className="workflow-carousel__viewport" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <div
           className="workflow-carousel__track"
@@ -86,6 +84,8 @@ export default function WorkflowCarousel({ page, pageName }) {
           ))}
         </div>
       </div>
+
+      <div className="workflow-carousel__hint">Nach links swipen = vorwärts · nach rechts swipen = rückwärts</div>
 
       <div className="workflow-carousel__controls">
         <button

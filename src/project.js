@@ -12,6 +12,7 @@
  * v0.12: PDF-Export korrigiert: Unicode-kompatible PDF-Ausgabe, erhaltene Zeilenumbrüche, Accordion-Inhalte,
  * v0.13: Mobile-Optimierung für Kapitel Praxis-Workflow sowie abgerundete Ecken für Swipe- und Aufklapp-Module.
  * v0.14: Mobile-Fix Praxis-Workflow: harte Breitenbegrenzung für Card, Inline-Grafik und Swipe-Komponenten gegen intrinsischen Horizontal-Overflow.
+ * v0.15: Swipe-Richtung Praxis-Workflow auf Standard-Geste umgestellt: links = vorwärts, rechts = rückwärts; Hinweis unterhalb des Grafik-Elements zentriert.
  *        sauberere Seitenumbrüche, klickbare Quellen und aktualisierte Impressumsdaten im PDF.
  *
  * WICHTIG VOR GO-LIVE:
@@ -34,7 +35,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.13",
+    contentVersion: "v0.15",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
