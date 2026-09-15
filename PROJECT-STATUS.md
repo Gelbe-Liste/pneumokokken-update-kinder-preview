@@ -1,3 +1,9 @@
+## v0.19 – 15.09.2026
+- PDF-Export: CME-Hinweisbox sicher innerhalb der Seitenbreite umbrochen.
+- CME-Grafik im PDF leicht kompakter, damit Hinweisbox nach Möglichkeit auf derselben Seite verbleibt.
+- Literaturverzeichnis blockweise paginiert: Quelle und URL werden nicht mehr auf zwei Seiten getrennt.
+- Fortsetzungsseiten der Literatur erhalten eine klare Fortsetzungsüberschrift.
+
 ## v0.18 – 15.09.2026
 - Austausch der final gelieferten Kapitelgrafiken 02–12 (PNG) in der Anwendung.
 - Inhalte/Tracking/Interaktionen aus v0.17 unverändert übernommen.

@@ -15,6 +15,7 @@
  * v0.15: Swipe-Richtung Praxis-Workflow auf Standard-Geste umgestellt: links = vorwärts, rechts = rückwärts; Hinweis unterhalb des Grafik-Elements zentriert.
  * v0.17: Ärztliche Finalredaktion mit Fokus auf publizierte/offizielle Quellen, aktualisierte STIKO 2026 Version 6 und nummerierte Quellenbelege im Text.
  * v0.18: Austausch der final freigegebenen Kapitelgrafiken 02–12 auf Basis der neu gelieferten redigierten Visuals.
+ * v0.19: PDF-Layout-Fix für CME-Hinweis und saubere, blockweise Quellen-Paginierung.
  *        sauberere Seitenumbrüche, klickbare Quellen und aktualisierte Impressumsdaten im PDF.
  *
  * WICHTIG VOR GO-LIVE:
@@ -37,7 +38,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.18",
+    contentVersion: "v0.19",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
