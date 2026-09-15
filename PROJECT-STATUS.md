@@ -1,3 +1,8 @@
+## v0.18 – 15.09.2026
+- Austausch der final gelieferten Kapitelgrafiken 02–12 (PNG) in der Anwendung.
+- Inhalte/Tracking/Interaktionen aus v0.17 unverändert übernommen.
+- Neue Paketversion: v0.18.
+
 # Projektstatus – pneumokokken-update-kinder
 
 ## v0.10 – 14.09.2026
