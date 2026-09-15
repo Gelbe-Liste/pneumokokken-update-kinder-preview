@@ -68,3 +68,6 @@ Nach inhaltlicher Freigabe der v0.1: visuelles Feintuning in Browser/Mobile, ggf
 ## v0.12 – PDF-Export / offener Analytics-Dokumentationspunkt
 - PDF-Export nach Prüfung des generierten v0.11-PDFs korrigiert (Unicode, Umbrüche, Accordion-Inhalte, Workflow-Paginierung, Literatur-Links, Impressum).
 - **Späterer To-do nach Abschluss der Konzeption:** saubere Piano-Analytics Event-/Property-Dokumentation für Alex/Emma erstellen. Noch nicht finalisieren, solange Kapitel-/Interaktionskonzept weiter bearbeitet wird.
+
+## v0.17 – 15.09.2026
+Ärztliche Finalredaktion auf Basis publizierter und offizieller Quellen. STIKO 2026 auf Version 6 aktualisiert, nummerierte Quellenbelege direkt im Text ergänzt, unveröffentlichte Kongressdaten aus dem Haupttext entfernt und Fachgrafiken 02–12 medizinisch/redaktionell synchronisiert.
