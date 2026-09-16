@@ -244,6 +244,7 @@ async function renderChapter(doc,state,page,project,logo,cache){
   }
 
   for(const p of page.paragraphs||[])y=paragraph(doc,state,p,y,logo,label);
+  if(page.highlight)y=noteBox(doc,state,page.highlight,y,logo,label);
   if(page.heading)y=heading(doc,state,page.heading,y,logo,label);
   if(page.bullets)y=bulletList(doc,state,page.bullets,y,logo,label);
   if(page.numbered)y=bulletList(doc,state,page.numbered,y,logo,label,true);

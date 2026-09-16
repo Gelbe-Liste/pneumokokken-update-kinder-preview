@@ -1,3 +1,16 @@
+## v0.20 – 16.09.2026
+- Umsetzung der Pfizer-Feinabstimmung vom 16.09.2026 auf Basis des Arbeitsprotokolls.
+- Wording auf „vollständige und frühestmögliche Immunisierung“ geschärft.
+- Kapitel 02 auf zwei zentrale KPIs fokussiert (73 % / 52,5 %); 8-%-Kennzahl entfernt.
+- IPD beim ersten Auftreten ausgeschrieben und Pneumonie-Kontext ergänzt.
+- Kapitel 04 neutralisiert; Serotyp 38 entfernt, Serotyp 3 als Beispiel beibehalten.
+- Kapitel 05 neutral auf PCV13/PCV15 und STIKO-Empfehlung ausgerichtet; Quellen [10]/[11] entfernt.
+- Risikogruppen-Headline überarbeitet und Referenzdichte reduziert.
+- Praktische PCV20-Impfschemata in Kapitel 09 als Praxishinweis hervorgehoben.
+- Quellenangaben aus den Praxis-Workflow-Slides entfernt; Grafik und Swipe-Workflow bleiben parallel bestehen.
+- Aktualisierte Kapitelgrafiken 02, 04, 05, 08 und 10 sowie editierbare Grafik-PowerPoint v0.20 integriert.
+- Offene Pfizer-Zulieferungen (Pyramiden-Darstellung/Pneumonie-Kontext und finale Praxisfälle) im Projektstatus dokumentiert.
+
 ## v0.19 – 15.09.2026
 - PDF-Export: CME-Hinweisbox sicher innerhalb der Seitenbreite umbrochen.
 - CME-Grafik im PDF leicht kompakter, damit Hinweisbox nach Möglichkeit auf derselben Seite verbleibt.

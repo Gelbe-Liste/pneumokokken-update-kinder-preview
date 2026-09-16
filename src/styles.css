@@ -174,7 +174,7 @@ h1, h2, h3, p { text-wrap: pretty; }
 .stat-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 24px 0; }
 .stat-tile { padding: 18px; background: rgba(255,220,0,.94); color: #111; }
 .stat-tile strong { display: block; font-size: clamp(2rem,4.2vw,3.8rem); line-height: .9; letter-spacing: -.05em; }
-.stat-tile span { display: block; margin-top: 9px; font-weight: 700; font-size: .84rem; line-height: 1.25; }
+.stat-tile span { display: block; margin-top: 9px; font-weight: 700; font-size: .96rem; line-height: 1.3; }
 .country-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; margin: 18px 0; }
 .country-grid span { padding: 8px 10px; border-bottom: 1px solid currentColor; font-weight: 800; font-size: .9rem; }
 .inline-figure { width: 100%; max-height: 270px; object-fit: contain; background: white; margin-top: 16px; border: 1px solid rgba(0,0,0,.12); }
@@ -183,7 +183,36 @@ h1, h2, h3, p { text-wrap: pretty; }
 .editorial-list li { margin: 9px 0; padding-left: 4px; font-size: clamp(.96rem,1.25vw,1.08rem); line-height: 1.45; }
 .editorial-list--numbered { padding-left: 1.6rem; }
 .editorial-list--numbered li::marker { font-weight: 900; color: var(--yellow); }
-.story-page--light .editorial-list--numbered li::marker { color: #8a7300; }
+.story-page--light .editorial-list--numbered li::marker { color: var(--yellow); text-shadow: 0 0 0 #111; }
+
+.editorial-list--numbered-cards {
+  list-style: none;
+  counter-reset: risk-card-counter;
+  padding-left: 0;
+  margin-top: 18px;
+}
+
+.editorial-list--numbered-cards li {
+  counter-increment: risk-card-counter;
+  position: relative;
+  margin: 0 0 14px;
+  padding: 16px 18px 16px 58px;
+  background: rgba(255, 220, 0, 0.28);
+  border-radius: 18px;
+}
+
+.editorial-list--numbered-cards li::before {
+  content: counter(risk-card-counter) ".";
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  color: #111;
+  font-weight: 900;
+}
+
+.story-page--light .editorial-list--numbered-cards li {
+  background: rgba(255, 220, 0, 0.35);
+}
 .editorial-quote { margin: 25px 0 0; padding: 16px 20px; border-left: 4px solid var(--yellow); background: rgba(255,255,255,.08); font-size: clamp(1rem,1.35vw,1.15rem); font-weight: 700; line-height: 1.45; }
 .story-page--light .editorial-quote { background: rgba(17,17,17,.055); }
 .text-block + .text-block { margin-top: 21px; padding-top: 4px; border-top: 1px solid currentColor; border-color: rgba(128,128,128,.28); }
@@ -258,7 +287,7 @@ h1, h2, h3, p { text-wrap: pretty; }
   .content-card h1 { font-size: clamp(3rem,15vw,5.2rem); }
   .content-card h2 { font-size: clamp(2rem,10vw,3.3rem); }
   .mega-stat { font-size: clamp(2.8rem,14vw,4.8rem) !important; }
-  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .stat-grid { grid-template-columns: 1fr; }
   .country-grid { grid-template-columns: 1fr; }
   .menu-overlay__nav { grid-template-columns: 1fr; }
   .step { grid-template-columns: 36px 1fr; gap: 12px; }
@@ -1815,6 +1844,7 @@ button.secondary-cta {
   color: #111;
   font-weight: 900;
   font-size: 1.25rem;
+  border-radius: 50%;
 }
 
 .workflow-slide h3 {
@@ -2052,4 +2082,19 @@ button.secondary-cta {
     aspect-ratio: auto !important;
     max-height: none !important;
   }
+}
+
+/* =========================================================
+   v0.26 – Kapitel 02 / Kapitel 08 Nachkorrekturen
+   - Kapitel 02: Grafikrahmen in der Höhe freigeben, damit die
+     16:9-Grafik ohne seitlichen Weißraum in voller Breite erscheint.
+   - Kapitel 08: Nummerierte Risikofaktor-Blöcke in Bold darstellen.
+   ========================================================= */
+#kernaussagen .inline-figure {
+  max-height: none;
+  height: auto;
+}
+
+#risikogruppen .editorial-list--numbered-cards li {
+  font-weight: 800;
 }

@@ -16,6 +16,19 @@
  * v0.17: Ärztliche Finalredaktion mit Fokus auf publizierte/offizielle Quellen, aktualisierte STIKO 2026 Version 6 und nummerierte Quellenbelege im Text.
  * v0.18: Austausch der final freigegebenen Kapitelgrafiken 02–12 auf Basis der neu gelieferten redigierten Visuals.
  * v0.19: PDF-Layout-Fix für CME-Hinweis und saubere, blockweise Quellen-Paginierung.
+ * v0.21: Austausch der Grafikbasis auf die feinbearbeitete Look-&-Feel-Version; gewünschte Anpassungen
+ *        in den Grafiken 02, 04, 05, 08 und 10 auf Basis des aktualisierten Grafik-Pakets umgesetzt.
+ * v0.24: Kapitel 02 vollständig auf die bestehende Visualisierung aus v0.22 zurückgesetzt;
+ *        keine strukturellen/visuellen Änderungen an Kacheln oder Grafikrahmen.
+ * v0.25: Textkorrektur Kapitel 02: Todesfälle in erste Einordnungs-Kachel integriert;
+ *        Bullet-Struktur auf vier bestehende Textblöcke reduziert.
+ * v0.23: Korrekturpaket Kapitel 02/08 inkl. neuer Kachelstruktur, bereinigter Unterzeile,
+ *        angepasstem Grafikrahmen sowie Austausch der aktualisierten PNG-Grafiken 02, 04, 05, 08 und 10.
+ * v0.22: Nachkorrekturen umgesetzt: aktualisierte Einstiegs- und Kernaussagen-Texte,
+ *        animierte Kennzahlen, hervorgehobene Versorgungslücke, Risikogruppen-Karten,
+ *        bereinigter STIKO-Hinweis, runde Workflow-Ziffern sowie Grafik-Update 02/04.
+ * v0.20: Umsetzung der Pfizer-Feinabstimmung vom 16.09.2026: Wording zur frühestmöglichen Immunisierung,
+ *        KPI-Fokussierung, neutralisierte Serotypen-/Impfstoffdarstellung, Praxis-Hervorhebungen und bereinigte Referenzen.
  *        sauberere Seitenumbrüche, klickbare Quellen und aktualisierte Impressumsdaten im PDF.
  *
  * WICHTIG VOR GO-LIVE:
@@ -38,7 +51,7 @@ export const project = {
     analyticsPage: "med-i-scroll-pneumokokken-update-kinder", // Legacy-Alias
     analyticsChapter1: "paediatrie-impfpraevention", // Legacy-Alias
     projectId: "pneumokokken-update-kinder",
-    contentVersion: "v0.19",
+    contentVersion: "v0.25",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
       pageType: "Microsite",
@@ -109,16 +122,6 @@ export const project = {
       text: "European Medicines Agency: Vaxneuvance – EPAR. Produktinformation, Zusammensetzung, Indikationen und pädiatrische Daten.",
       url: "https://www.ema.europa.eu/en/medicines/human/EPAR/vaxneuvance"
     },
-    {
-      id: "SR-1",
-      text: "Wagner G et al.: Immunogenicity and safety of the 15-valent pneumococcal conjugate vaccine: a systematic review and meta-analysis. NPJ Vaccines. 2024;9:257.",
-      url: "https://pubmed.ncbi.nlm.nih.gov/39738219/"
-    },
-    {
-      id: "SR-2",
-      text: "Abo Zeid M et al.: Comparative immunogenicity and safety of PCV15 versus PCV13 for pneumococcal serotypes 22F and 33F: systematic review and meta-analysis. Infection. 2026.",
-      url: "https://pubmed.ncbi.nlm.nih.gov/42467175/"
-    }
   ],
 
   imprint: {
@@ -161,7 +164,7 @@ export const project = {
       tone: "dark",
       align: "left",
       kind: "hero",
-      quote: "Bei der Pneumokokken-Impfung bestehen weiterhin Lücken bei Vollständigkeit und Zeitgerechtigkeit. [6,7]",
+      quote: "Bei der Pneumokokken-Impfung bestehen weiterhin Lücken hinsichtlich einer vollständigen und möglichst frühzeitigen Immunisierung. [6,7]",
       attribution: "Redaktion Gelbe Liste"
     },
     {
@@ -169,11 +172,11 @@ export const project = {
       number: "02",
       nav: "Kernaussagen",
       kicker: "Kernaussagen in 60 Sekunden",
-      title: "Vollständigkeit und Zeitgerechtigkeit bleiben zentrale Versorgungsthemen",
+      title: "Vollständige und frühzeitige Immunisierung bleibt zentrales Versorgungsthema",
       subtitle: "Impfquoten, Risikoprofil und Krankheitslast gemeinsam in die Versorgung einordnen.",
       background: "/assets/backgrounds/02_keyfacts_pneumokokken-bg.jpg",
       inlineImage: "/assets/images/02_keyfacts_ipd.png",
-      inlineImageAlt: "Arbeitsgrafik zu Versorgungslücken, zeitgerechtem Impfschutz und medizinischer IPD-Einordnung bei Kindern",
+      inlineImageAlt: "Arbeitsgrafik zu Versorgungslücken, frühestmöglicher Immunisierung und medizinischer Einordnung invasiver Pneumokokken-Erkrankungen bei Kindern",
       focal: "right center",
       tone: "light",
       align: "left",
@@ -183,13 +186,12 @@ export const project = {
       zoomable: true,
       stats: [
         { value: "73 %", label: "der Kinder waren 2024 im Alter von 24 Monaten vollständig gegen Pneumokokken geimpft [6]" },
-        { value: "ca. 8 %", label: "der reifgeborenen Kinder einer InGef-Analyse blieben bis 24 Monate ohne dokumentierte PCV-Impfung [7]" },
         { value: "52,5 %", label: "der Frühgeborenen der Geburtskohorte 2020 hatten bis 24 Monate eine vollständige PCV-Impfserie erhalten [7]" }
       ],
-      quote: "Impfserien werden bei Kindern weiterhin teilweise verspätet oder nicht vollständig abgeschlossen. [6,7]",
+      quote: "Eine vollständige und möglichst frühzeitige Immunisierung bleibt ein zentrales Versorgungsziel. [6,7]",
       bullets: [
-        "Zur medizinischen Einordnung: 685 gemeldete IPD-Fälle bei 2–17-Jährigen von Januar 2023 bis Mitte Dezember 2025 [1]",
-        "18 Todesfälle im genannten Meldezeitraum [1]",
+        "Zur medizinischen Einordnung: 685 gemeldete Fälle invasiver Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) bei 2–17-Jährigen von Januar 2023 bis Mitte Dezember 2025; davon 18 Todesfälle im genannten Meldezeitraum [1]",
+        "Pneumokokken-Pneumonien sind in diesen IPD-Zahlen nicht erfasst. Krankenhausdiagnosedaten bilden die tatsächliche Krankheitslast nur unvollständig ab. [4]",
         "Kinder mit definierten Risikofaktoren tragen ein deutlich erhöhtes Risiko für invasive Pneumokokken-Erkrankungen. [1]",
         "Impfstatus, Risikoprofil und nächster fälliger Impftermin gemeinsam prüfen."
       ]
@@ -212,7 +214,7 @@ export const project = {
       zoomable: true,
       paragraphs: [
         "Streptococcus pneumoniae kann den oberen Respirationstrakt asymptomatisch besiedeln. Kinder unter 5 Jahren sind das wichtigste Reservoir; durchschnittlich sind 40–60 % dieser Altersgruppe kolonisiert. Damit spielen Kinder eine zentrale Rolle bei der Transmission. [1]",
-        "Aus der Kolonisation können unter anderem Pneumonien sowie invasive Erkrankungen wie Sepsis und Meningitis entstehen. Die Krankheitslast ambulant erworbener Pneumokokken-Pneumonien lässt sich bei Kindern nur eingeschränkt quantifizieren, da häufig keine mikrobiologische Erregerdiagnostik erfolgt. [1]",
+        "Aus der Kolonisation können unter anderem Pneumonien sowie invasive Erkrankungen wie Sepsis und Meningitis entstehen. In Krankenhausdiagnosedaten für Kinder <5 Jahren entfielen 2012–2019 62 % der erfassten pneumokokkenbedingten Hospitalisierungen auf Pneumonien; zugleich bilden diese Daten die Gesamtfallzahl nur unvollständig ab. [4]",
         "Säuglinge und Kleinkinder sowie Kinder mit definierten Risikofaktoren sind für invasive Pneumokokken-Erkrankungen besonders relevant. Präventionsentscheidungen orientieren sich daher an Alter, Impfstatus und individuellem Risikoprofil. [1,2]"
       ],
       quote: "Alter, Impfstatus und Risikoprofil sind zentrale Determinanten der Pneumokokken-Impfstrategie. [1,2]"
@@ -222,7 +224,7 @@ export const project = {
       number: "04",
       nav: "Serotypen im Wandel",
       kicker: "Serotypen im Wandel",
-      title: "Die Impfstofflandschaft verändert die Serotypenlandschaft",
+      title: "Impfstoffe können die Serotypendynamik beeinflussen",
       subtitle: "Warum die aktuelle Epidemiologie kontinuierlich neu bewertet werden muss.",
       background: "/assets/backgrounds/04_serotypenlandschaft_wandel-bg.jpg",
       focal: "right center",
@@ -234,9 +236,9 @@ export const project = {
       long: true,
       zoomable: true,
       paragraphs: [
-        "Pneumokokken weisen eine große Serotypenvielfalt auf. Impfprogramme verändern die Serotypenverteilung: Erkrankungen durch abgedeckte Serotypen können zurückgehen, während andere Serotypen relativ an Bedeutung gewinnen. Eine kontinuierliche Surveillance ist deshalb erforderlich. [8]",
-        "In den deutschen Meldedaten 2023–2025 lag für 104 IPD-Fälle bei 2–17-Jährigen eine Serotypangabe vor. 50 % entfielen auf PCV13-Serotypen; Serotyp 3 war mit 24 % der häufigste einzelne Serotyp. Wegen der kleinen Fallzahlen ist die Interpretation mit Vorsicht vorzunehmen. [1]",
-        "Eine 2026 publizierte bundesweite Surveillanceanalyse für 2017–2024 zeigt bei Kindern und Jugendlichen <18 Jahren eine dynamische Serotypenverteilung. Serotyp 3 persistierte über den Beobachtungszeitraum; zugleich nahm Serotyp 38 zuletzt insbesondere bei Kindern <2 Jahren deutlich zu. [8]",
+        "Pneumokokken weisen eine große Serotypenvielfalt auf. Impfprogramme können die Serotypenverteilung beeinflussen: Erkrankungen durch abgedeckte Serotypen können tendenziell zurückgehen, während andere Serotypen relativ an Bedeutung gewinnen. Eine kontinuierliche Surveillance ist deshalb erforderlich. [8]",
+        "In den deutschen Meldedaten 2023–2025 lag für 104 Fälle invasiver Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) bei 2–17-Jährigen eine Serotypangabe vor. 50 % entfielen auf PCV13-Serotypen; Serotyp 3 war mit 24 % der häufigste einzelne Serotyp. Wegen der kleinen Fallzahlen ist die Interpretation mit Vorsicht vorzunehmen. [1]",
+        "Eine 2026 publizierte bundesweite Surveillanceanalyse für 2017–2024 zeigt bei Kindern und Jugendlichen <18 Jahren eine dynamische Serotypenverteilung. Serotyp 3 persistierte über den Beobachtungszeitraum und bleibt damit ein relevantes Beispiel für die Notwendigkeit kontinuierlicher Surveillance. [8]",
         "Serotypenverteilungen und theoretisch impfpräventable Anteile sind epidemiologische Kenngrößen. Sie sind nicht mit klinischer Impfstoffwirksamkeit gleichzusetzen und ersetzen nicht die alters- und indikationsspezifische STIKO-Empfehlung. [1,2,8]"
       ],
       quote: "Serotypenabdeckung ist eine epidemiologische Kenngröße – keine Rangliste der Impfstoffe. [1,8]"
@@ -244,25 +246,26 @@ export const project = {
     {
       id: "valenz-evidenz",
       number: "05",
-      nav: "Valenz & Evidenz",
-      kicker: "Valenz & Evidenz",
-      title: "Impfstoffkonzepte, Valenz & Serotypenabdeckung einordnen",
-      subtitle: "PCV15 als Evidenzbeispiel: zusätzliche Serotypenabdeckung im Kontext von Immunogenität, Epidemiologie und klinischem Nutzen.",
+      nav: "Impfstoffe & Serotypen",
+      kicker: "Impfstoffe und Serotypendynamik",
+      title: "Impfstoffe und Serotypenabdeckung einordnen",
+      subtitle: "PCV13 und PCV15 im Kontext ihrer Serotypenzusammensetzung und der STIKO-Empfehlung.",
       background: "/assets/backgrounds/05_pcv15_erweiterung-bg.jpg",
       focal: "left center",
       inlineImage: "/assets/images/05_valenz_evidenz.png",
-      inlineImageAlt: "Arbeitsgrafik zur Einordnung von Serotypenabdeckung, Immunogenität, Epidemiologie und klinischem Nutzen mit PCV15 als Evidenzbeispiel",
+      inlineImageAlt: "Arbeitsgrafik zur neutralen Einordnung von PCV13 und PCV15, Serotypenabdeckung, Immunogenität, Epidemiologie und klinischem Nutzen",
       tone: "dark",
       align: "right",
       kind: "standard",
       long: true,
       zoomable: true,
       paragraphs: [
-        "PCV15 enthält die 13 Serotypen von PCV13 sowie zusätzlich 22F und 33F. PCV13 und PCV15 sind von der STIKO für die Standardimpfung im Säuglingsalter empfohlen. [2,4,9]",
-        "Systematische Reviews und Meta-Analysen zeigen für die zusätzlichen Serotypen 22F und 33F höhere serotypspezifische Immunantworten unter PCV15 im Vergleich zu PCV13. Ob und in welchem Umfang sich diese immunologischen Unterschiede in einer höheren klinischen Effektivität niederschlagen, ist bislang nicht belegt. [10,11]",
-        "Für die Einordnung sind Valenz, Immunogenität, aktuelle Epidemiologie und klinische Wirksamkeit getrennt zu betrachten. Für Kinder und Jugendliche von 2 bis einschließlich 17 Jahren mit definierten Risikofaktoren gilt seit 2026 eine eigene STIKO-Indikationsimpfung mit PCV20. [1,2]"
+        "Für die Standardimpfung gegen Pneumokokken im Säuglingsalter empfiehlt die STIKO einen Pneumokokken-Konjugatimpfstoff und keinen bestimmten Impfstoff; PCV13 und PCV15 können für die Grundimmunisierung eingesetzt werden. [2,4]",
+        "PCV13 umfasst die Serotypen 1, 3, 4, 5, 6A, 6B, 7F, 9V, 14, 18C, 19A, 19F und 23F. PCV15 enthält diese 13 Serotypen sowie zusätzlich 22F und 33F. [4,9]",
+        "Die STIKO bewertet den zusätzlichen Nutzen von PCV15 gegenüber PCV13 unter Berücksichtigung der Serotypenverteilung als gering; für die Standardimpfung werden beide Impfstoffe ohne Produktpräferenz eingesetzt. [4]",
+        "Für Kinder und Jugendliche von 2 bis einschließlich 17 Jahren mit definierten Risikofaktoren gilt seit 2026 eine eigene STIKO-Indikationsimpfung mit PCV20. [1,2]"
       ],
-      quote: "Valenz beschreibt Serotypenabdeckung – der klinische Nutzen ist zusätzlich von Wirksamkeit, Epidemiologie und Zielgruppe abhängig. [1,2,10,11]"
+      quote: "Serotypenabdeckung ist ein relevanter Aspekt der Impfstoffeinordnung; für die Impfentscheidung bleibt die jeweils aktuelle STIKO-Empfehlung maßgeblich. [1,2,4]"
     },
     {
       id: "standardimpfung",
@@ -284,10 +287,10 @@ export const project = {
         "Für die Standardimpfung im Säuglingsalter empfiehlt die STIKO PCV13 oder PCV15. Gesunde reifgeborene Säuglinge werden im 2+1-Schema im Alter von 2, 4 und 11 Monaten geimpft. PCV20 ist derzeit nicht Bestandteil der STIKO-Standardimpfung im Säuglingsalter. [2,3]",
         "Frühgeborene vor vollendeter 37. Schwangerschaftswoche erhalten eine zusätzliche Dosis im Alter von 3 Monaten und werden im 3+1-Schema im Alter von 2, 3, 4 und 11 Monaten geimpft. [2]",
         "Noch nicht gegen Pneumokokken geimpfte Kinder im Alter von ≥12 bis <24 Monaten erhalten zur Nachholimpfung zwei Dosen im Abstand von mindestens 8 Wochen. [2]",
-        "Die Versorgungslücke bleibt relevant: 2024 waren im Alter von 24 Monaten 73 % der Kinder vollständig gegen Pneumokokken geimpft. In einer retrospektiven InGef-Abrechnungsdatenanalyse lag die vollständige PCV-Impfquote bei Frühgeborenen der Geburtskohorte 2020 bei 52,5 %; bei reifgeborenen Kindern blieben über die untersuchten Kohorten hinweg etwa 8 % ohne dokumentierte PCV-Impfung. [6,7]",
         "Werden Impftermine versäumt oder verschoben, sollte der Impfstatus beim nächsten geeigneten Kontakt geprüft und die fehlende Impfung entsprechend der aktuellen STIKO-Empfehlung nachgeholt werden. [2,6]"
       ],
-      quote: "Vollständigkeit und Zeitgerechtigkeit der Impfserie sind beide relevante Qualitätsziele der Impfversorgung. [6,7]"
+      highlight: "Die Versorgungslücke bleibt relevant: 2024 waren im Alter von 24 Monaten 73 % der Kinder vollständig gegen Pneumokokken geimpft. In einer retrospektiven InGef-Abrechnungsdatenanalyse lag die vollständige PCV-Impfquote bei Frühgeborenen der Geburtskohorte 2020 bei 52,5 %. [6,7]",
+      quote: "Eine vollständige und frühestmögliche Impfserie ist ein zentrales Qualitätsziel der Impfversorgung. [6,7]"
     },
     {
       id: "impfserie-wechsel",
@@ -344,8 +347,8 @@ export const project = {
       id: "risikogruppen",
       number: "08",
       nav: "Risikogruppen",
-      kicker: "Risikokinder",
-      title: "Risikokind ist nicht gleich Risikokind",
+      kicker: "Risikogruppen",
+      title: "Risikofaktoren erkennen – Impfplanung individuell ausrichten",
       subtitle: "Drei Gruppen strukturieren die Indikationsimpfung – entscheidend ist die konkrete STIKO-Indikation.",
       background: "/assets/backgrounds/08_risikokinder_profile-bg.jpg",
       focal: "right center",
@@ -357,17 +360,17 @@ export const project = {
       long: true,
       zoomable: true,
       paragraphs: [
-        "Kinder und Jugendliche mit bestimmten Risikofaktoren tragen ein erhöhtes Risiko für invasive Pneumokokken-Erkrankungen. Die STIKO unterscheidet drei Gruppen von Risikofaktoren. [1,2]",
-        "Für die praktische Impfplanung sind neben der zugrunde liegenden STIKO-Indikation insbesondere Alter, dokumentierter Impfstatus, Therapie beziehungsweise Immunsuppression sowie gegebenenfalls geplante Interventionen zu berücksichtigen. [1,2]"
+        "Kinder und Jugendliche mit bestimmten Risikofaktoren tragen ein erhöhtes Risiko für invasive Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD). Die STIKO unterscheidet drei Gruppen von Risikofaktoren. [1,2]",
+        "Für die praktische Impfplanung sind neben der zugrunde liegenden STIKO-Indikation insbesondere Alter, dokumentierter Impfstatus, Therapie beziehungsweise Immunsuppression sowie gegebenenfalls geplante Interventionen zu berücksichtigen."
       ],
+      numberedVariant: "cards",
       numbered: [
-        "Angeborene oder erworbene Immundefekte beziehungsweise Immunsuppression. [1,2]",
-        "Sonstige chronische Krankheiten mit erhöhter Gefährdung für Pneumokokken-Infektionen. [1,2]",
-        "Anatomische oder fremdkörperassoziierte Risiken für eine Pneumokokken-Meningitis. [1,2]"
+        "Angeborene oder erworbene Immundefekte beziehungsweise Immunsuppression",
+        "Sonstige chronische Krankheiten mit erhöhter Gefährdung für Pneumokokken-Infektionen",
+        "Anatomische oder fremdkörperassoziierte Risiken für eine Pneumokokken-Meningitis"
       ],
       paragraphsAfter: [
-        "Eine Immunsuppression kann durch die Erkrankung selbst oder durch eine immunsuppressive Therapie bedingt sein. Bei geplanten Interventionen wie Splenektomie oder Cochlea-Implantation soll die Impfung möglichst vor der Intervention erfolgen. [1,2]",
-        "Asthma bronchiale ist in der STIKO als Beispiel einer chronischen Erkrankung der Atmungsorgane mit erhöhter gesundheitlicher Gefährdung aufgeführt. [1,2]",
+        "Eine Immunsuppression kann durch die Erkrankung selbst oder durch eine immunsuppressive Therapie bedingt sein. Bei geplanten Interventionen wie Splenektomie oder Cochlea-Implantation soll die Impfung möglichst vor der Intervention erfolgen. Asthma bronchiale ist in der STIKO als Beispiel einer chronischen Erkrankung der Atmungsorgane mit erhöhter gesundheitlicher Gefährdung aufgeführt. [1,2]",
         "Bei gemeinsamer Betreuung durch pädiatrische und weitere fachärztliche Praxen sollten Impfstatus, Zuständigkeit und notwendige Folgetermine transparent dokumentiert und kommuniziert werden."
       ],
       quote: "Zuerst die STIKO-Indikation klären – anschließend Alter, Vorimpfungen, Therapie und Versorgungssituation in die Umsetzung einbeziehen. [1,2]"
@@ -390,8 +393,10 @@ export const project = {
       zoomable: true,
       paragraphs: [
         "Seit Januar 2026 empfiehlt die STIKO für Kinder und Jugendliche im Alter von 2 bis einschließlich 17 Jahren mit definierten Risikofaktoren PCV20 als Indikationsimpfung. Die alleinige Anwendung von PPSV23 beziehungsweise das bisherige sequenzielle Schema wird für diese Gruppe nicht mehr empfohlen. [1,2]",
-        "Etwa 70 % der IPD-Fälle bei 2- bis 17-jährigen Kindern und Jugendlichen werden Serotypen zugeordnet, die in PCV20 enthalten sind. Die aktualisierte Empfehlung vereinfacht zugleich die bisherige sequenzielle Impfstrategie. [1]",
-        "Ungeimpfte Risikokinder erhalten PCV20. Nach mindestens einer früheren Dosis PCV13 oder PCV15 soll PCV20 im Abstand von 1 Jahr erfolgen. Nach früherer PPSV23-Impfung beziehungsweise früherem sequenziellen Schema gilt grundsätzlich ein Abstand von 6 Jahren; bei ausgeprägter Immundefizienz kann bereits nach 1 Jahr mit PCV20 geimpft werden. [1,2]",
+        "Etwa 70 % der Fälle invasiver Pneumokokken-Erkrankungen (Invasive Pneumokokken Disease, IPD) bei 2- bis 17-jährigen Kindern und Jugendlichen werden Serotypen zugeordnet, die in PCV20 enthalten sind. Die aktualisierte Empfehlung vereinfacht zugleich die bisherige sequenzielle Impfstrategie. [1]"
+      ],
+      highlight: "Ungeimpfte Risikokinder erhalten PCV20. Nach mindestens einer früheren Dosis PCV13 oder PCV15 soll PCV20 im Abstand von 1 Jahr erfolgen. Nach früherer PPSV23-Impfung beziehungsweise früherem sequenziellen Schema gilt grundsätzlich ein Abstand von 6 Jahren; bei ausgeprägter Immundefizienz kann bereits nach 1 Jahr mit PCV20 geimpft werden. [1,2]",
+      paragraphsAfter: [
         "Die Umsetzung der aktualisierten Empfehlung in der Schutzimpfungs-Richtlinie ist seit dem 14.04.2026 in Kraft. [5]"
       ],
       note: "Zur Notwendigkeit von Wiederholungsimpfungen nach PCV20 liegen derzeit keine ausreichenden Daten vor; die STIKO spricht deshalb aktuell keine Empfehlung für Wiederholungsimpfungen aus. [1,2]",
@@ -415,8 +420,8 @@ export const project = {
       zoomable: true,
       intro: "Der Praxis-Workflow ist keine individuelle Impfentscheidungshilfe, sondern strukturiert organisatorische Schritte zur Identifikation und Impfversorgung von Risikokindern.",
       steps: [
-        { title: "Risikokinder identifizieren", items: ["Patientenkollektiv systematisch auf definierte STIKO-Risikofaktoren prüfen. [1,2]"] },
-        { title: "Impfstatus kontrollieren", items: ["Dokumentierte Standard- und Indikationsimpfungen sowie relevante Vorimpfungen prüfen. [1,2]"] },
+        { title: "Risikokinder identifizieren", items: ["Patientenkollektiv systematisch auf definierte STIKO-Risikofaktoren prüfen."] },
+        { title: "Impfstatus kontrollieren", items: ["Dokumentierte Standard- und Indikationsimpfungen sowie relevante Vorimpfungen prüfen."] },
         { title: "Risikokinder dokumentieren", items: ["Geeignete Kodierung bzw. Dokumentation im Praxisverwaltungssystem nutzen."] },
         { title: "Recall-/Reminder-Funktionen einsetzen", items: ["Ausstehende Impfungen im Praxisverwaltungssystem sichtbar machen und Wiedervorlagen nutzen."] },
         { title: "Aktiv einbestellen", items: ["Sorgeberechtigte beziehungsweise Jugendliche gezielt kontaktieren und einen konkreten Impftermin vereinbaren."] },
@@ -498,11 +503,11 @@ export const project = {
       kind: "cta",
       long: true,
       paragraphs: [
-        "Sie möchten die Einordnung von zeitgerechtem Impfschutz, Serotypen, Impfstoffkonzepten und Risikokonstellationen vertiefen? Im CME-Modul „Pneumokokken-Impfung bei Kindern“ führen zwei pädiatrische Experten von der Evidenz zur konkreten Versorgungssituation.",
-        "Die CME verbindet drei Perspektiven: Standardimpfung und zeitgerechter Schutz im Säuglingsalter, Impfstoffkonzepte und sich wandelnde Serotypen-Epidemiologie sowie Risikokinder, Indikationsimpfung und individuelle Versorgungssituationen. Praxisfälle übertragen diese Themen in den kinderärztlichen Alltag."
+        "Sie möchten die Einordnung von frühestmöglichem Impfschutz, Serotypen, Impfstoffkonzepten und Risikokonstellationen vertiefen? Im CME-Modul „Pneumokokken-Impfung bei Kindern“ führen zwei pädiatrische Experten von der Evidenz zur konkreten Versorgungssituation.",
+        "Die CME verbindet drei Perspektiven: Standardimpfung und frühestmöglicher Schutz im Säuglingsalter, Impfstoffkonzepte und sich wandelnde Serotypen-Epidemiologie sowie Risikokinder, Indikationsimpfung und individuelle Versorgungssituationen. Praxisfälle übertragen diese Themen in den kinderärztlichen Alltag."
       ],
       bullets: [
-        "Standardimpfung im Säuglingsalter, zeitgerechter Impfschutz und Versorgungslücken",
+        "Standardimpfung im Säuglingsalter, frühestmöglicher Impfschutz und Versorgungslücken",
         "Impfstoffkonzepte, Serotypenabdeckung und sich wandelnde Epidemiologie",
         "Risikokinder, Indikationsimpfung und individuelle Versorgungssituationen",
         "aktuelle STIKO 2026, Impfintervalle, Praxisfälle und FAQ [2]",
