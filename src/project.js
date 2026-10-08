@@ -59,20 +59,14 @@ export const project = {
     contentVersion: "v0.32",
     analytics: {
       page: "med.i.scroll | Pneumokokken-Impfung bei Kindern",
-      pageType: "Microsite",
+      pageType: "med.i.scroll",
       visitorType: "Not logged",
       medicalField: "Kinder- und Jugendmedizin",
       indication: "Pneumokokken-Impfung bei Kindern",
-      articleCategory: ["MED.I.SCROLL", "IMPFPRÄVENTION"],
+      articleCategory: ["Impfung"],
+      specialtyCategories: ["Pädiatrie"],
+      contentTypeCategories: ["Impfung"],
       tags: ["med.i.scroll", "Gelbe Liste", "Pneumokokken", "Pädiatrie", "Impfprävention"],
-      product: {
-        name: "",
-        molecules: [],
-        titulaire: "",
-        atcClassCodes: [],
-        atcClassNames: [],
-        ucd10Codes: []
-      }
     },
     pdfFileName: "Pneumokokken-Update-Kinder_Gelbe-Liste.pdf",
     pdfSubject: "Pneumokokken-Impfung bei Kindern | Gelbe Liste",

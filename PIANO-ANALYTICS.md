@@ -1,71 +1,33 @@
-# Piano Analytics – Pneumokokken-Impfung bei Kindern / Stand Mastertemplate v5
+# Piano Analytics – Zielstand 08.10.2026 (Mapping v1.2)
 
-Stand: 08.09.2026
+## Format
 
-## Projektkontext
+- `page_type`: `med.i.scroll`
+- `article_category`: `Impfung` (Pagetype aus der Vidal-Liste)
+- `de_page_category`: ["Pädiatrie", "Impfung"] (nur Werte aus Specialty + Content Type)
+- `is_PAP`: `1`
+- `visitor_type`: `Not logged`
 
-- `project_id`: `pneumokokken-update-kinder`
-- Format: `med.i.scroll`
-- Medizinisches Fachgebiet: `Kinder- und Jugendmedizin`
-- Indikation: `Pneumokokken-Impfung bei Kindern`
-- Piano Page: `med.i.scroll | Pneumokokken-Impfung bei Kindern`
+Pneumokokken-Impfung bei Kindern: Pagetype „Impfung“, Specialty „Pädiatrie“, Content Type „Impfung“.
 
-Die inhaltliche Version v0.7 wurde bei dieser Migration nicht redaktionell verändert; angepasst wurde ausschließlich die Analytics-/Tracking-Schicht und ihre Metadaten.
+## Acquisition / UTM
 
-## Wiederverwendete Vidal-/Gelbe-Liste-Events
+Die frühere Custom-Property `entry_point` wird **nicht mehr verwendet**. Für Kampagnen- und Quellenattribution werden die in Piano bereits vorhandenen Dimensionen **UTM Medium**, **UTM Source** und **UTM Campaign** genutzt. Die konkrete UTM-Wertelogik für NFC, QR und Direct Link wird zentral mit Vidal Analytics/Marketing festgelegt.
 
-- `page.display`
-- `click.action`
-- `pop_in.display`
+## Product Properties
 
-## Custom Events des med.i.scroll v5
+`product_name`, `product_mol`, `product_titulaire`, `product_ATC_class_code`, `product_ATC_class_name` und `product_UCD10_codes` dürfen nur bei einer echten Pharmindex-API-Verknüpfung mit den dort gelieferten MMI-Bezeichnungen befüllt werden. In diesem Projekt werden sie daher aktuell nicht gesendet.
 
-- `chapter.display` – Kapitel erstmals zu mindestens 35 % sichtbar
-- `page.scroll` – 25/50/75/100 %; 100 % nur am tatsächlichen Dokumentende
-- `video.start`
-- `video.progress`
-- `video.complete`
+`box_names` ist Medibox-spezifisch und wird nicht verwendet.
 
-Die frühere Semantik `chapter_view`, `scroll_depth`, `module_complete`, `image_view_*`, `outbound_click`, `navigation_click`, `pdf_generate_*` und die alten `video_*`-Events wurde entfernt.
+## Events
 
-## Neue Custom Properties
+Bestandssemantik: `page.display`, `click.action`, `pop_in.display`.
 
-`project_id`, `chapter_id`, `chapter_number`, `chapter_title`, `content_type`, `scroll_rate`, `image_id`, `zoom_level`, `document_id`, `element_id`, `destination_path`, `trigger_source`, `entry_point`, `video_id`, `video_name`, `progress_percent`.
+med.i.scroll Custom Events: `chapter.display`, `page.scroll` sowie – nur falls A/V Insights nicht Zielstandard wird – `video.start`, `video.progress`, `video.complete`. Projektabhängige Interaktionen wie Accordion/Workflow bleiben als bereits implementierte Custom Events bestehen und müssen vor Aktivierung im Piano Data Model freigegeben sein.
 
-Für dieses Projekt kann `content_type` zusätzlich den vorhandenen projektspezifischen Kapiteltyp `cta` annehmen.
+`page.display` wird weiterhin gesendet, aber im Template nicht eigenmächtig als `essential` in `consent_items.events` ergänzt, solange die Vidal-Consent-Zuordnung nicht final bestätigt ist.
 
-## Bestehende Gelbe-Liste-Properties
+## Deployment
 
-Bei `page.display` werden – soweit im Projekt befüllt – `page`, `page_url`, `de_page_category`, `de_page_tags`, `page_type`, `visitor_type`, `article_category` und die vorhandenen `product_*`-Properties verwendet. Produktwerte sind aktuell bewusst leer, solange keine fachlich freigegebene Produktzuordnung vorliegt.
-
-## Aktivierung
-
-```env
-VITE_PIANO_ENABLED=true
-VITE_PIANO_SITE_ID=640794
-VITE_PIANO_COLLECT_DOMAIN=https://rwwnhth.pa-cd.com
-```
-
-Im gelieferten Projektstand ist `VITE_PIANO_ENABLED=false`. Erst nach Data-Model-/Privacy-Freigabe im produktiven Vercel-Projekt aktivieren.
-
-## KPI-Mapping
-
-- Reach/Visits: `page.display`
-- Chapter Reach: `chapter.display`
-- Scroll Depth: `page.scroll` + `scroll_rate`
-- Completion: `page.scroll` + `scroll_rate=100`
-- Grafik: `click.action` + Open/Close/Zoom
-- PDF: `click.action` + Generate/Download
-- CME-/externe CTA: `click.action` + `destination_path`
-- Navigation/Menü: `click.action` bzw. `pop_in.display`
-- Video: `video.start`, `video.progress`, `video.complete`
-
-## v0.11 – zusätzliche Interaktionen
-
-### Praxis-FAQ / Praxis-Fälle
-- Event: `accordion.toggle`
-- Relevante Properties: `chapter_id`, `accordion_id`, `accordion_title`, `accordion_group`, `interaction_state`, `trigger_source`
-
-### Praxis-Workflow
-- Event: `workflow.slide`
-- Relevante Properties: `chapter_id`, `slide_index`, `slide_total`, `slide_title`, `trigger_source`
+Tracking bleibt im Paket mit `VITE_PIANO_ENABLED=false` deaktiviert. Aktivierung erst nach Data-Model-, Privacy-/Essential- und Staging-QA. Site: `640794`, Collection Domain: `https://rwwnhth.pa-cd.com`.

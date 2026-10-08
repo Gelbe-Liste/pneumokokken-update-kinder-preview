@@ -79,9 +79,9 @@ Das Projekt kann in ein eigenes GitHub-Repository mit dem Arbeitstitel `pneumoko
 8. Finale Bild-/Grafiknachweise ergänzen.
 
 
-## Piano Analytics – Migration 08.09.2026
+## Piano Analytics – Mapping v1.2 / 08.10.2026
 
-Das Tracking entspricht jetzt technisch dem med.i.scroll-Mastertemplate v5. Die frühere Eventstruktur `chapter_view`, `scroll_depth`, `module_complete`, `image_view_*`, `outbound_click`, `navigation_click` und `pdf_generate_*` wurde auf die aktuelle gemeinsame Semantik migriert.
+Das Tracking entspricht dem aktuellen Piano-Parameter-Mapping v1.2. `page_type="med.i.scroll"`, `article_category=["Impfung"]` und `de_page_category=["Pädiatrie", "Impfung"]`. `is_PAP=1` wird persistent gesetzt. Die frühere Custom-Property `entry_point` ist entfernt; Acquisition wird über die vorhandenen Piano-Dimensionen UTM Medium, UTM Source und UTM Campaign ausgewertet. `box_names` wird nicht verwendet; `product_*` wird nur bei einer Pharmindex-API-Verknüpfung befüllt.
 
 - `page.display`: Einstieg / Reichweite
 - `chapter.display`: Chapter Reach (35-%-Sichtbarkeit)
